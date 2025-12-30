@@ -1,4 +1,4 @@
-export { ServiceCard } from "./ServiceCard";
-export { ActivityCard } from "./ActivityCard";
-export { RecognitionCard } from "./RecognitionCard";
-export { EventCard } from "./EventCard";
+export { ActivityCard } from './ActivityCard';
+export { EventCard } from './EventCard';
+export { RecognitionCard } from './RecognitionCard';
+export { ServiceCard } from './ServiceCard';

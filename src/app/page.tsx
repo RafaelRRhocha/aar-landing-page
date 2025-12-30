@@ -1,14 +1,14 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { WorkSection } from "@/components/sections/WorkSection";
-import { EventsSection } from "@/components/sections/EventsSection";
-import { GallerySection } from "@/components/sections/GallerySection";
-import { ArtAndCultureSection } from "@/components/sections/ArtAndCultureSection";
-import { ImpactSection } from "@/components/sections/ImpactSection";
-import { RecognitionSection } from "@/components/sections/RecognitionSection";
-import { CTASection } from "@/components/sections/CTASection";
+import { Footer } from '@/components/layout/Footer';
+import { Header } from '@/components/layout/Header';
+import { AboutSection } from '@/components/sections/AboutSection';
+import { ArtAndCultureSection } from '@/components/sections/ArtAndCultureSection';
+import { CTASection } from '@/components/sections/CTASection';
+import { EventsSection } from '@/components/sections/EventsSection';
+import { GallerySection } from '@/components/sections/GallerySection';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { ImpactSection } from '@/components/sections/ImpactSection';
+import { RecognitionSection } from '@/components/sections/RecognitionSection';
+import { WorkSection } from '@/components/sections/WorkSection';
 
 export default function Home() {
   return (

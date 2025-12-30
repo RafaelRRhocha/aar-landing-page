@@ -1,27 +1,28 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { ArrowDown, Heart, Users, Calendar } from "lucide-react";
-import { Container } from "../ui/Container";
-import { Button } from "../ui/Button";
+import { motion } from 'framer-motion';
+import { ArrowDown, Calendar, Heart, Users } from 'lucide-react';
+
+import { Button } from '../ui/Button';
+import { Container } from '../ui/Container';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-burgundy via-burgundy-dark to-primary">
+    <section className="from-burgundy via-burgundy-dark to-primary relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-br">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(800px,100vw)] h-[min(800px,100vw)] max-w-full bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
+        <div className="bg-primary/20 absolute right-10 bottom-20 h-96 w-96 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 h-[min(800px,100vw)] w-[min(800px,100vw)] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
       </div>
 
-      <Container className="relative z-10 pt-20 sm:pt-24 pb-16 sm:pb-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <Container className="relative z-10 pt-20 pb-16 sm:pt-24 sm:pb-20">
+        <div className="mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white text-xs sm:text-sm font-medium mb-6 backdrop-blur-sm">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white backdrop-blur-sm sm:text-sm">
               <Heart size={16} className="text-white" />
               Associação sem fins lucrativos
             </span>
@@ -31,17 +32,17 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-3xl sm:text-5xl desktop:text-7xl font-bold text-white leading-tight mb-6"
+            className="desktop:text-7xl mb-6 text-3xl leading-tight font-bold text-white sm:text-5xl"
           >
             Juntos pelos renais
-            <span className="block text-primary mt-2">desde 2010</span>
+            <span className="text-primary mt-2 block">desde 2010</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-base sm:text-xl desktop:text-2xl text-white/90 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2"
+            className="desktop:text-2xl mx-auto mb-8 max-w-2xl px-2 text-base leading-relaxed text-white/90 sm:mb-10 sm:text-xl"
           >
             Promovendo dignidade, cuidado e qualidade de vida para pacientes
             renais crônicos e seus familiares através do apoio multidisciplinar
@@ -52,12 +53,20 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+            className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
           >
-            <Button href="#quem-somos" variant="primary" className="w-full sm:w-auto">
+            <Button
+              href="#quem-somos"
+              variant="primary"
+              className="w-full sm:w-auto"
+            >
               Conheça nossa história
             </Button>
-            <Button href="#nossa-atuacao" variant="ghost" className="w-full sm:w-auto">
+            <Button
+              href="#nossa-atuacao"
+              variant="ghost"
+              className="w-full sm:w-auto"
+            >
               Nossa atuação
             </Button>
           </motion.div>
@@ -66,22 +75,43 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 max-w-3xl mx-auto"
+            className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3 sm:gap-6"
           >
-            <div className="flex flex-col items-center p-5 sm:p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
-              <Calendar size={24} className="text-white mb-2 sm:mb-3 sm:w-7 sm:h-7" />
-              <span className="text-2xl sm:text-3xl font-bold text-white mb-1">14+</span>
-              <span className="text-white/80 text-xs sm:text-sm text-center">Anos de atuação</span>
+            <div className="flex flex-col items-center rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm sm:p-6">
+              <Calendar
+                size={24}
+                className="mb-2 text-white sm:mb-3 sm:h-7 sm:w-7"
+              />
+              <span className="mb-1 text-2xl font-bold text-white sm:text-3xl">
+                14+
+              </span>
+              <span className="text-center text-xs text-white/80 sm:text-sm">
+                Anos de atuação
+              </span>
             </div>
-            <div className="flex flex-col items-center p-5 sm:p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
-              <Users size={24} className="text-white mb-2 sm:mb-3 sm:w-7 sm:h-7" />
-              <span className="text-2xl sm:text-3xl font-bold text-white mb-1">1000+</span>
-              <span className="text-white/80 text-xs sm:text-sm text-center">Famílias atendidas</span>
+            <div className="flex flex-col items-center rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm sm:p-6">
+              <Users
+                size={24}
+                className="mb-2 text-white sm:mb-3 sm:h-7 sm:w-7"
+              />
+              <span className="mb-1 text-2xl font-bold text-white sm:text-3xl">
+                1000+
+              </span>
+              <span className="text-center text-xs text-white/80 sm:text-sm">
+                Famílias atendidas
+              </span>
             </div>
-            <div className="flex flex-col items-center p-5 sm:p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
-              <Heart size={24} className="text-white mb-2 sm:mb-3 sm:w-7 sm:h-7" />
-              <span className="text-2xl sm:text-3xl font-bold text-white mb-1">100%</span>
-              <span className="text-white/80 text-xs sm:text-sm text-center">Trabalho voluntário</span>
+            <div className="flex flex-col items-center rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm sm:p-6">
+              <Heart
+                size={24}
+                className="mb-2 text-white sm:mb-3 sm:h-7 sm:w-7"
+              />
+              <span className="mb-1 text-2xl font-bold text-white sm:text-3xl">
+                100%
+              </span>
+              <span className="text-center text-xs text-white/80 sm:text-sm">
+                Trabalho voluntário
+              </span>
             </div>
           </motion.div>
         </div>
@@ -96,10 +126,10 @@ export function HeroSection() {
         <motion.a
           href="#quem-somos"
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors"
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-2 text-white/80 transition-colors hover:text-white"
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <span className="text-xs tracking-widest uppercase">Scroll</span>
           <ArrowDown size={20} />
         </motion.a>
       </motion.div>

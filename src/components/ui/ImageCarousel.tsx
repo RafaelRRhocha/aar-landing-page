@@ -1,38 +1,38 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { useState } from 'react';
+import Image from 'next/image';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 interface ImageCarouselProps {
-  images: string[];
-  aspectRatio?: "video" | "square" | "4-3";
+  images: Array<string>;
+  aspectRatio?: 'video' | 'square' | '4-3';
   autoplay?: boolean;
   showPagination?: boolean;
-  slidesPerView?: number | "auto";
+  slidesPerView?: number | 'auto';
   spaceBetween?: number;
   className?: string;
 }
 
 export function ImageCarousel({
   images,
-  aspectRatio = "video",
+  aspectRatio = 'video',
   autoplay = true,
   showPagination = true,
   slidesPerView = 1,
   spaceBetween = 0,
-  className = "",
+  className = '',
 }: ImageCarouselProps) {
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 
   const aspectClasses = {
-    video: "aspect-video",
-    square: "aspect-square",
-    "4-3": "aspect-4-3",
+    video: 'aspect-video',
+    square: 'aspect-square',
+    '4-3': 'aspect-4-3',
   };
 
   const handleImageLoad = (index: number) => {
@@ -44,7 +44,7 @@ export function ImageCarousel({
   }
 
   return (
-    <div className={`relative group ${className}`}>
+    <div className={`group relative ${className}`}>
       <Swiper
         modules={[Autoplay, Pagination]}
         spaceBetween={spaceBetween}
@@ -66,14 +66,16 @@ export function ImageCarousel({
             : false
         }
         loop={images.length > 1}
-        className="w-full h-full carousel-red-dots"
+        className="carousel-red-dots h-full w-full"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className={`relative w-full ${aspectClasses[aspectRatio]} bg-cream-dark rounded-2xl overflow-hidden`}>
+            <div
+              className={`relative w-full ${aspectClasses[aspectRatio]} bg-cream-dark overflow-hidden rounded-2xl`}
+            >
               {!loadedImages.has(index) && (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                  <div className="border-primary h-8 w-8 animate-spin rounded-full border-2 border-t-transparent" />
                 </div>
               )}
               <Image
@@ -91,4 +93,3 @@ export function ImageCarousel({
     </div>
   );
 }
-

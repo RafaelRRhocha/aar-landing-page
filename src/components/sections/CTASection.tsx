@@ -1,44 +1,49 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { Heart, Phone, Mail, MapPin } from "lucide-react";
-import { Container } from "../ui/Container";
-import { AnimatedSection } from "../ui/AnimatedSection";
-import { Button } from "../ui/Button";
-import { CONTACT_INFO } from "@/lib/constants";
+import { motion } from 'framer-motion';
+import { Heart, Mail, MapPin, Phone } from 'lucide-react';
+
+import { CONTACT_INFO } from '@/lib/constants';
+
+import { AnimatedSection } from '../ui/AnimatedSection';
+import { Button } from '../ui/Button';
+import { Container } from '../ui/Container';
 
 export function CTASection() {
   return (
-    <section id="apoie" className="py-16 sm:py-20 desktop:py-32 bg-cream overflow-hidden">
+    <section
+      id="apoie"
+      className="desktop:py-32 bg-cream overflow-hidden py-16 sm:py-20"
+    >
       <Container>
-        <div className="grid grid-cols-1 desktop:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div className="desktop:grid-cols-2 grid grid-cols-1 items-center gap-8 sm:gap-12">
           <AnimatedSection>
-            <div className="text-center desktop:text-left">
+            <div className="desktop:text-left text-center">
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto desktop:mx-0 mb-6"
+                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                className="bg-primary/10 desktop:mx-0 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full sm:h-20 sm:w-20"
               >
-                <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+                <Heart className="text-primary h-8 w-8 sm:h-10 sm:w-10" />
               </motion.div>
-              
-              <h2 className="text-2xl sm:text-3xl desktop:text-4xl font-bold text-foreground mb-4">
+
+              <h2 className="desktop:text-4xl text-foreground mb-4 text-2xl font-bold sm:text-3xl">
                 Apoie Nossa Causa
               </h2>
-              
-              <p className="text-foreground/70 text-base sm:text-lg leading-relaxed mb-6 max-w-xl mx-auto desktop:mx-0">
+
+              <p className="text-foreground/70 desktop:mx-0 mx-auto mb-6 max-w-xl text-base leading-relaxed sm:text-lg">
                 Sua contribuição ajuda a manter nossos serviços e ampliar o
                 atendimento aos pacientes renais crônicos e suas famílias.
                 Juntos, podemos fazer a diferença.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center desktop:justify-start">
+              <div className="desktop:justify-start flex flex-col justify-center gap-3 sm:flex-row">
                 <Button href="#contato" variant="primary">
                   <a
                     className="text-white"
-                    href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                    href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -46,7 +51,7 @@ export function CTASection() {
                   </a>
                 </Button>
                 <Button
-                  href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                  href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, '')}`}
                   variant="outline"
                 >
                   Fale Conosco
@@ -56,50 +61,62 @@ export function CTASection() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-cream-dark">
-              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-6">
+            <div className="border-cream-dark rounded-2xl border bg-white p-6 shadow-lg sm:rounded-3xl sm:p-8">
+              <h3 className="text-foreground mb-6 text-lg font-bold sm:text-xl">
                 Informações de Contato
               </h3>
-              
+
               <div className="space-y-4">
                 <motion.a
-                  href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                  href={`tel:${CONTACT_INFO.phone.replace(/\D/g, '')}`}
                   whileHover={{ x: 4 }}
-                  className="flex items-start gap-4 p-4 bg-cream rounded-xl hover:bg-cream-dark transition-colors"
+                  className="bg-cream hover:bg-cream-dark flex items-start gap-4 rounded-xl p-4 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
+                  <div className="bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <Phone className="text-primary h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-foreground/60 mb-1">Telefone</div>
-                    <div className="font-medium text-foreground">{CONTACT_INFO.phone}</div>
+                    <div className="text-foreground/60 mb-1 text-sm">
+                      Telefone
+                    </div>
+                    <div className="text-foreground font-medium">
+                      {CONTACT_INFO.phone}
+                    </div>
                   </div>
                 </motion.a>
 
                 <motion.a
                   href={`mailto:${CONTACT_INFO.email}`}
                   whileHover={{ x: 4 }}
-                  className="flex items-start gap-4 p-4 bg-cream rounded-xl hover:bg-cream-dark transition-colors"
+                  className="bg-cream hover:bg-cream-dark flex items-start gap-4 rounded-xl p-4 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-burgundy/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-burgundy" />
+                  <div className="bg-burgundy/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <Mail className="text-burgundy h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-foreground/60 mb-1">E-mail</div>
-                    <div className="font-medium text-foreground break-all">{CONTACT_INFO.email}</div>
+                    <div className="text-foreground/60 mb-1 text-sm">
+                      E-mail
+                    </div>
+                    <div className="text-foreground font-medium break-all">
+                      {CONTACT_INFO.email}
+                    </div>
                   </div>
                 </motion.a>
 
                 <motion.div
                   whileHover={{ x: 4 }}
-                  className="flex items-start gap-4 p-4 bg-cream rounded-xl"
+                  className="bg-cream flex items-start gap-4 rounded-xl p-4"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
+                  <div className="bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <MapPin className="text-primary h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-foreground/60 mb-1">Endereço</div>
-                    <div className="font-medium text-foreground">{CONTACT_INFO.address}</div>
+                    <div className="text-foreground/60 mb-1 text-sm">
+                      Endereço
+                    </div>
+                    <div className="text-foreground font-medium">
+                      {CONTACT_INFO.address}
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -110,4 +127,3 @@ export function CTASection() {
     </section>
   );
 }
-

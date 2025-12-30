@@ -1,57 +1,73 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { Calendar, Users, Heart, Building2, Award, Syringe } from "lucide-react";
-import { Container } from "../ui/Container";
-import { SectionTitle } from "../ui/SectionTitle";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "../ui/AnimatedSection";
-import { IMPACT_NUMBERS } from "@/lib/constants";
+import { motion } from 'framer-motion';
+import {
+  Award,
+  Building2,
+  Calendar,
+  Heart,
+  Syringe,
+  Users,
+} from 'lucide-react';
+
+import { IMPACT_NUMBERS } from '@/lib/constants';
+
+import {
+  AnimatedSection,
+  StaggerContainer,
+  StaggerItem,
+} from '../ui/AnimatedSection';
+import { Container } from '../ui/Container';
+import { SectionTitle } from '../ui/SectionTitle';
 
 const STATS = [
   {
     icon: Calendar,
     value: IMPACT_NUMBERS.yearsOfOperation,
-    suffix: "+",
-    label: "Anos de Atuação",
+    suffix: '+',
+    label: 'Anos de Atuação',
   },
   {
     icon: Users,
     value: IMPACT_NUMBERS.totalRegistered,
-    suffix: "",
-    label: "Pacientes Cadastrados",
+    suffix: '',
+    label: 'Pacientes Cadastrados',
   },
   {
     icon: Heart,
     value: IMPACT_NUMBERS.activePatients,
-    suffix: "+",
-    label: "Pacientes Ativos",
+    suffix: '+',
+    label: 'Pacientes Ativos',
   },
   {
     icon: Award,
     value: IMPACT_NUMBERS.trianonEvents,
-    suffix: "",
-    label: "Eventos no Trianon",
+    suffix: '',
+    label: 'Eventos no Trianon',
   },
 ];
 
 const ACHIEVEMENTS = [
   {
     icon: Building2,
-    title: "Clínica Nefro Campos",
+    title: 'Clínica Nefro Campos',
     description:
       "Criação da Clínica Regional de Hemodiálise 'Amigos do Rim – Francisco Paes Filho' no Hospital Geral de Guarus.",
   },
   {
     icon: Syringe,
-    title: "Vacinação Prioritária",
+    title: 'Vacinação Prioritária',
     description:
-      "Conquista histórica: inclusão dos pacientes renais no grupo prioritário de vacinação contra a COVID-19.",
+      'Conquista histórica: inclusão dos pacientes renais no grupo prioritário de vacinação contra a COVID-19.',
   },
 ];
 
 export function ImpactSection() {
   return (
-    <section id="impacto" className="py-16 sm:py-20 desktop:py-32 bg-linear-to-br from-burgundy via-burgundy-dark to-primary overflow-hidden">
+    <section
+      id="impacto"
+      className="desktop:py-32 from-burgundy via-burgundy-dark to-primary overflow-hidden bg-linear-to-br py-16 sm:py-20"
+    >
       <Container>
         <AnimatedSection>
           <SectionTitle
@@ -61,42 +77,44 @@ export function ImpactSection() {
           />
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-2 desktop:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+        <StaggerContainer className="desktop:grid-cols-4 mb-12 grid grid-cols-2 gap-4 sm:mb-16 sm:gap-6">
           {STATS.map((stat) => (
             <StaggerItem key={stat.label}>
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="text-center p-5 sm:p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20"
+                className="rounded-2xl border border-white/20 bg-white/10 p-5 text-center backdrop-blur-sm sm:p-6"
               >
-                <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white mx-auto mb-3" />
-                <div className="text-3xl sm:text-4xl desktop:text-5xl font-bold text-white mb-2">
-                  {stat.value.toLocaleString("pt-BR")}
+                <stat.icon className="mx-auto mb-3 h-8 w-8 text-white sm:h-10 sm:w-10" />
+                <div className="desktop:text-5xl mb-2 text-3xl font-bold text-white sm:text-4xl">
+                  {stat.value.toLocaleString('pt-BR')}
                   {stat.suffix}
                 </div>
-                <div className="text-white/80 text-sm sm:text-base">{stat.label}</div>
+                <div className="text-sm text-white/80 sm:text-base">
+                  {stat.label}
+                </div>
               </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
         <AnimatedSection delay={0.3}>
-          <h3 className="text-xl sm:text-2xl font-bold text-white text-center mb-6 sm:mb-8">
+          <h3 className="mb-6 text-center text-xl font-bold text-white sm:mb-8 sm:text-2xl">
             Conquistas Históricas
           </h3>
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+        <StaggerContainer className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {ACHIEVEMENTS.map((achievement) => (
             <StaggerItem key={achievement.title}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="p-5 sm:p-6 bg-white rounded-2xl shadow-lg"
+                className="rounded-2xl bg-white p-5 shadow-lg sm:p-6"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <achievement.icon className="w-6 h-6 text-primary" />
+                <div className="mb-4 flex items-center gap-4">
+                  <div className="bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
+                    <achievement.icon className="text-primary h-6 w-6" />
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground">
+                  <h4 className="text-foreground text-lg font-semibold">
                     {achievement.title}
                   </h4>
                 </div>
@@ -111,4 +129,3 @@ export function ImpactSection() {
     </section>
   );
 }
-

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { LucideIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { LucideIcon } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -9,21 +9,28 @@ interface ServiceCardProps {
   description: string;
 }
 
-export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
+export function ServiceCard({
+  icon: Icon,
+  title,
+  description,
+}: ServiceCardProps) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className="group bg-white rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-cream-dark h-full"
+      className="group border-cream-dark h-full rounded-2xl border bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-lg sm:p-6"
     >
-      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-105 transition-all duration-300 shrink-0">
+      <div className="bg-primary/10 group-hover:bg-primary mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105 sm:h-14 sm:w-14">
         <Icon
           size={24}
-          className="text-primary group-hover:text-white transition-colors sm:w-7 sm:h-7"
+          className="text-primary transition-colors group-hover:text-white sm:h-7 sm:w-7"
         />
       </div>
-      <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2 leading-tight">{title}</h3>
-      <p className="text-foreground/70 text-sm leading-relaxed">{description}</p>
+      <h3 className="text-foreground mb-2 text-base leading-tight font-semibold sm:text-lg">
+        {title}
+      </h3>
+      <p className="text-foreground/70 text-sm leading-relaxed">
+        {description}
+      </p>
     </motion.div>
   );
 }
-

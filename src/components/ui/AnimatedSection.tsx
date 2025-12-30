@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -11,14 +11,14 @@ interface AnimatedSectionProps {
 
 export function AnimatedSection({
   children,
-  className = "",
+  className = '',
   delay = 0,
 }: AnimatedSectionProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: '-100px' }}
       transition={{
         duration: 0.6,
         delay,
@@ -38,13 +38,13 @@ interface StaggerContainerProps {
 
 export function StaggerContainer({
   children,
-  className = "",
+  className = '',
 }: StaggerContainerProps) {
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: '-100px' }}
       variants={{
         hidden: { opacity: 0 },
         visible: {
@@ -64,7 +64,7 @@ export function StaggerContainer({
 
 export function StaggerItem({
   children,
-  className = "",
+  className = '',
 }: {
   children: ReactNode;
   className?: string;
@@ -85,4 +85,3 @@ export function StaggerItem({
     </motion.div>
   );
 }
-

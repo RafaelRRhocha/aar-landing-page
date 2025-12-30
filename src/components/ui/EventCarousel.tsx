@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { ReactNode } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { ReactNode } from 'react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 interface EventCarouselProps {
-  children: ReactNode[];
+  children: Array<ReactNode>;
   autoplay?: boolean;
   className?: string;
 }
@@ -16,7 +16,7 @@ interface EventCarouselProps {
 export function EventCarousel({
   children,
   autoplay = true,
-  className = "",
+  className = '',
 }: EventCarouselProps) {
   if (children.length === 0) {
     return null;
@@ -62,4 +62,3 @@ export function EventCarousel({
     </div>
   );
 }
-

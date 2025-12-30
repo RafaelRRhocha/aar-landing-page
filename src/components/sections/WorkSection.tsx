@@ -1,14 +1,22 @@
-"use client";
+'use client';
 
-import { Container } from "../ui/Container";
-import { SectionTitle } from "../ui/SectionTitle";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "../ui/AnimatedSection";
-import { ServiceCard } from "../cards/ServiceCard";
-import { SERVICES, IMPACT_AREAS } from "@/lib/constants";
+import { IMPACT_AREAS, SERVICES } from '@/lib/constants';
+
+import { ServiceCard } from '../cards/ServiceCard';
+import {
+  AnimatedSection,
+  StaggerContainer,
+  StaggerItem,
+} from '../ui/AnimatedSection';
+import { Container } from '../ui/Container';
+import { SectionTitle } from '../ui/SectionTitle';
 
 export function WorkSection() {
   return (
-    <section id="nossa-atuacao" className="py-16 sm:py-20 desktop:py-32 bg-cream overflow-hidden">
+    <section
+      id="nossa-atuacao"
+      className="desktop:py-32 bg-cream overflow-hidden py-16 sm:py-20"
+    >
       <Container>
         <AnimatedSection>
           <SectionTitle
@@ -19,12 +27,12 @@ export function WorkSection() {
 
         <div className="mb-12 sm:mb-16">
           <AnimatedSection delay={0.1}>
-            <h3 className="text-lg sm:text-xl font-bold text-burgundy mb-6 sm:mb-8 text-center">
+            <h3 className="text-burgundy mb-6 text-center text-lg font-bold sm:mb-8 sm:text-xl">
               Atendimento Multidisciplinar
             </h3>
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 desktop:grid-cols-3 gap-4 sm:gap-6">
+          <StaggerContainer className="desktop:grid-cols-3 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
             {SERVICES.map((service) => (
               <StaggerItem key={service.title}>
                 <ServiceCard
@@ -39,12 +47,12 @@ export function WorkSection() {
 
         <div className="mt-12 sm:mt-20">
           <AnimatedSection delay={0.2}>
-            <h3 className="text-lg sm:text-xl font-bold text-burgundy mb-6 sm:mb-8 text-center">
+            <h3 className="text-burgundy mb-6 text-center text-lg font-bold sm:mb-8 sm:text-xl">
               Mobilização e Atuação Institucional
             </h3>
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <StaggerContainer className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
             {IMPACT_AREAS.map((area) => (
               <StaggerItem key={area.title}>
                 <ServiceCard
@@ -60,4 +68,3 @@ export function WorkSection() {
     </section>
   );
 }
-

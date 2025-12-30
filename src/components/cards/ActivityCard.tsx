@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { LucideIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { LucideIcon } from 'lucide-react';
 
 interface ActivityCardProps {
   icon: LucideIcon;
@@ -19,19 +19,19 @@ export function ActivityCard({
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-dark h-full"
+      className="group border-cream-dark h-full overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-300 hover:shadow-xl"
     >
-      <div className="relative h-48 bg-linear-to-br from-burgundy to-primary overflow-hidden">
+      <div className="from-burgundy to-primary relative h-48 overflow-hidden bg-linear-to-br">
         {image ? (
-          <div className="relative w-full h-full">
-            <div 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-cover bg-center"
+          <div className="relative h-full w-full">
+            <div
+              className="h-full w-full bg-cover bg-center object-cover transition-transform duration-500 group-hover:scale-105"
               style={{ backgroundImage: `url(${image})` }}
             />
           </div>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
               <Icon size={40} className="text-white/80" />
             </div>
             <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
@@ -39,11 +39,13 @@ export function ActivityCard({
         )}
       </div>
       <div className="p-5 sm:p-6">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+        <div className="mb-3 flex items-center gap-3">
+          <div className="bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
             <Icon size={20} className="text-primary" />
           </div>
-          <h3 className="text-base sm:text-lg font-semibold text-foreground leading-tight">{title}</h3>
+          <h3 className="text-foreground text-base leading-tight font-semibold sm:text-lg">
+            {title}
+          </h3>
         </div>
         <p className="text-foreground/70 text-sm leading-relaxed">
           {description}
@@ -52,4 +54,3 @@ export function ActivityCard({
     </motion.div>
   );
 }
-

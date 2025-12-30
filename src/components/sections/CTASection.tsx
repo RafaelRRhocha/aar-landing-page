@@ -40,7 +40,7 @@ export function CTASection() {
               </p>
 
               <div className="desktop:justify-start flex flex-col justify-center gap-3 sm:flex-row">
-                <Button href="#contato" variant="primary">
+                <Button variant="primary">
                   <a
                     className="text-white"
                     href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, '')}`}

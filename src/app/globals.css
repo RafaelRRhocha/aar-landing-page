@@ -149,3 +149,7 @@ button {
   width: 24px;
   border-radius: 5px;
 }
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}

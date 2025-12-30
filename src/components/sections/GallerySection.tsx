@@ -94,7 +94,9 @@ export function GallerySection() {
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-                <span className="relative z-10">{category.title}</span>
+                <span className="font-inter relative z-10">
+                  {category.title}
+                </span>
               </button>
             ))}
           </div>

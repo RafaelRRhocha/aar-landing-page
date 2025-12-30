@@ -83,7 +83,7 @@ export function ImpactSection() {
             <StaggerItem key={stat.label}>
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="rounded-2xl border border-white/20 bg-white/10 p-5 text-center backdrop-blur-sm sm:p-6"
+                className="flex h-full flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-5 text-center backdrop-blur-sm sm:p-6"
               >
                 <stat.icon className="mx-auto mb-3 h-8 w-8 text-white sm:h-10 sm:w-10" />
                 <div className="desktop:text-5xl mb-2 text-3xl font-bold text-white sm:text-4xl">

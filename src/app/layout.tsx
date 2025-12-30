@@ -13,14 +13,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Associação Amigos do Rim - AAR',
   description:
-    'Organização voluntária dedicada ao apoio e cuidado de pessoas com doenças renais. Juntos pelos renais desde 2010.',
+    'Organização voluntária dedicada ao apoio e cuidado de pessoas com doenças renais.',
   icons: {
     icon: '/favicon.ico',
   },
   openGraph: {
     title: 'Associação Amigos do Rim - AAR',
     description:
-      'Organização voluntária dedicada ao apoio e cuidado de pessoas com doenças renais. Juntos pelos renais desde 2010.',
+      'Organização voluntária dedicada ao apoio e cuidado de pessoas com doenças renais.',
     type: 'website',
     locale: 'pt_BR',
     siteName: 'Associação Amigos do Rim',

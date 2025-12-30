@@ -83,3 +83,63 @@ button {
   background-color: #E31E24;
   color: white;
 }
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.image-cover {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-red-dots {
+  padding-bottom: 40px !important;
+}
+
+.carousel-red-dots .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.carousel-red-dots .swiper-pagination-bullet {
+  background: var(--color-primary);
+  opacity: 0.3;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.carousel-red-dots .swiper-pagination-bullet-active {
+  background: var(--color-primary);
+  opacity: 1;
+  width: 24px;
+  border-radius: 5px;
+}

@@ -6,4 +6,5 @@ export {
   StaggerContainer,
   StaggerItem,
 } from "./AnimatedSection";
-
+export { ImageCarousel } from "./ImageCarousel";
+export { EventCarousel } from "./EventCarousel";

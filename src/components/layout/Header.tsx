@@ -6,7 +6,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Heart, Users, Calendar, Star } from "lucide-react";
 import { Container } from "../ui/Container";
-import { NAV_LINKS } from "@/lib/constants";
+import { CONTACT_INFO, NAV_LINKS } from "@/lib/constants";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -201,7 +201,9 @@ export function Header() {
                       Juntos podemos transformar vidas e apoiar pacientes renais.
                     </p>
                     <a
-                      href="#contato"
+                      href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"  
                       onClick={handleLinkClick}
                       className="flex items-center justify-center w-full px-3 py-2 bg-white text-primary font-medium rounded-lg hover:bg-white/90 transition-colors text-xs"
                     >

@@ -8,26 +8,22 @@ import {
   Heart,
   Megaphone,
   Building2,
-  Stethoscope,
-  Calendar,
-  Droplets,
-  Gift,
-  Theater,
-  Music,
-  Palette,
   Award,
   Medal,
   Trophy,
-  Star,
+  Handshake,
+  ShieldCheck,
+  Sparkles,
   LucideIcon,
 } from "lucide-react";
 
 export const NAV_LINKS = [
   { href: "#quem-somos", label: "Quem Somos" },
   { href: "#nossa-atuacao", label: "Nossa Atuação" },
-  { href: "#atividades", label: "Atividades" },
+  { href: "#eventos", label: "Eventos" },
+  { href: "#galeria", label: "Galeria" },
   { href: "#arte-cultura", label: "Arte e Cultura" },
-  { href: "#reconhecimentos", label: "Reconhecimentos" },
+  { href: "#impacto", label: "Impacto" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -42,7 +38,7 @@ export const SERVICES: Service[] = [
     icon: Brain,
     title: "Psicologia",
     description:
-      "Suporte emocional e psicológico para pacientes e familiares, promovendo bem-estar mental durante o tratamento.",
+      "Atendimento psicológico individual e em grupo para pacientes e familiares, promovendo bem-estar mental durante o tratamento.",
   },
   {
     icon: Apple,
@@ -60,19 +56,19 @@ export const SERVICES: Service[] = [
     icon: Users,
     title: "Serviço Social",
     description:
-      "Assistência social para garantir acesso a direitos e benefícios, apoiando pacientes e suas famílias.",
+      "Atendimento social para garantir acesso a direitos e benefícios, apoiando pacientes e suas famílias.",
   },
   {
     icon: Scale,
     title: "Apoio Jurídico",
     description:
-      "Orientação jurídica gratuita sobre direitos dos pacientes renais crônicos.",
+      "Suporte jurídico para garantia de direitos, como transporte gratuito para tratamento.",
   },
   {
     icon: BookOpen,
     title: "Educação em Saúde",
     description:
-      "Palestras e oficinas educativas sobre prevenção, tratamento e qualidade de vida.",
+      "Jornadas de capacitação para estudantes e profissionais das universidades públicas como UENF e UFF.",
   },
 ];
 
@@ -81,93 +77,116 @@ export const IMPACT_AREAS = [
     icon: Heart,
     title: "Mobilização Social",
     description:
-      "Campanhas de conscientização e engajamento da comunidade em prol da saúde renal.",
+      "Campanhas anuais pelo Dia Mundial do Rim e pelo Dia Nacional da Doação de Órgãos.",
   },
   {
     icon: Megaphone,
     title: "Atuação Política",
     description:
-      "Representação institucional e advocacy pelos direitos dos pacientes renais.",
+      "Articulações junto a órgãos públicos para garantir melhores condições de cuidado e tratamento.",
   },
   {
     icon: Building2,
     title: "Parcerias Institucionais",
     description:
-      "Colaboração com órgãos públicos, hospitais e entidades para ampliar o impacto social.",
+      "Colaboração com hospitais, universidades e entidades para ampliar o impacto social.",
   },
 ];
 
-export interface Activity {
+export interface EventData {
   id: string;
-  icon: LucideIcon;
   title: string;
   description: string;
-  image?: string;
+  folder: string;
+  featured?: boolean;
 }
 
-export const ACTIVITIES: Activity[] = [
+export const EVENTS_DATA: EventData[] = [
   {
-    id: "medical-care",
-    icon: Stethoscope,
-    title: "Atendimentos",
-    description:
-      "Consultas multidisciplinares gratuitas com profissionais voluntários de diversas especialidades.",
+    id: "baile",
+    title: "Baile de Luzes",
+    description: "Evento beneficente tradicional com música e dança, promovendo integração e arrecadação de fundos.",
+    folder: "baile",
+    featured: true,
   },
   {
-    id: "world-kidney-day",
-    icon: Calendar,
-    title: "Dia Mundial do Rim",
-    description:
-      "Evento anual de conscientização com ações de prevenção, exames gratuitos e palestras educativas.",
-  },
-  {
-    id: "prevention-campaigns",
-    icon: Droplets,
-    title: "Campanhas de Prevenção e Doação de Sangue",
-    description:
-      "Iniciativas regulares para conscientização sobre doenças renais e incentivo à doação de sangue.",
-  },
-  {
-    id: "organ-donation-day",
-    icon: Heart,
-    title: "Dia Nacional da Doação de Órgãos",
-    description:
-      "Celebração e conscientização sobre a importância da doação de órgãos para salvar vidas.",
-  },
-  {
-    id: "charity-events",
-    icon: Gift,
-    title: "Eventos Beneficentes",
-    description:
-      "Bailes, jantares e eventos culturais para arrecadação de fundos e integração da comunidade.",
-  },
-  {
-    id: "teatro-trianon",
-    icon: Theater,
+    id: "trianon",
     title: "Teatro Trianon",
-    description:
-      "Apresentações teatrais beneficentes que unem arte, cultura e solidariedade.",
+    description: "11 eventos promovidos no Teatro Trianon com cantores locais, unindo arte e solidariedade.",
+    folder: "eventotrianon",
+    featured: true,
   },
   {
-    id: "craft-classes",
-    icon: Palette,
-    title: "Oficinas de Artesanato",
-    description:
-      "Aulas de artesanato que promovem integração, terapia ocupacional e geração de renda.",
+    id: "dia-mundial-rim",
+    title: "Dia Mundial do Rim 2025",
+    description: "Campanha anual de conscientização com ações de prevenção e exames gratuitos.",
+    folder: "diamundialdorim2025",
+    featured: true,
+  },
+  {
+    id: "confraternizacao",
+    title: "Confraternização de Final de Ano",
+    description: "Celebração de encerramento do ano com pacientes, familiares e voluntários.",
+    folder: "confraternizaofinaldeano",
+    featured: true,
+  },
+  {
+    id: "doacao-orgaos",
+    title: "Dia Nacional da Doação de Órgãos",
+    description: "Campanha de incentivo à doação de órgãos realizada em 27 de setembro.",
+    folder: "doeorgaos",
+  },
+  {
+    id: "conscientizacao-doacao",
+    title: "Campanha de Conscientização",
+    description: "Ações de conscientização sobre a importância da doação de órgãos e tecidos.",
+    folder: "campanhaconscientizaodianacionaldedoaodergos",
+  },
+];
+
+export interface GalleryCategory {
+  id: string;
+  title: string;
+  folder: string;
+  description: string;
+}
+
+export const GALLERY_CATEGORIES: GalleryCategory[] = [
+  {
+    id: "atendimentos",
+    title: "Atendimentos",
+    folder: "atendimentos",
+    description: "Consultas multidisciplinares com profissionais voluntários",
   },
   {
     id: "pilates",
-    icon: Dumbbell,
-    title: "Pilates",
-    description:
-      "Aulas de pilates adaptadas para pacientes renais, promovendo saúde física e bem-estar.",
+    title: "Pilates e Fisioterapia",
+    folder: "pilates_e_fisioterapia",
+    description: "Atividades físicas adaptadas para pacientes renais",
   },
   {
-    id: "honors-awards",
-    icon: Award,
-    title: "Honrarias e Prêmios",
-    description:
-      "Reconhecimentos recebidos pela associação por seu trabalho social e comunitário.",
+    id: "pintura",
+    title: "Oficinas de Arte",
+    folder: "aulapinturaemtelaepinturaemtelha",
+    description: "Aulas de pintura em tela e telha para expressão criativa",
+  },
+  {
+    id: "aromaterapia",
+    title: "Aromaterapia",
+    folder: "aulaaromaterapia",
+    description: "Sessões de aromaterapia para bem-estar e relaxamento",
+  },
+  {
+    id: "uenf",
+    title: "Parceria UENF",
+    folder: "aulaparceriauenfcaminhosdebarro",
+    description: "Oficinas em parceria com a UENF - Caminhos de Barro",
+  },
+  {
+    id: "reunioes",
+    title: "Reuniões",
+    folder: "reunioes",
+    description: "Encontros de planejamento e organização da associação",
   },
 ];
 
@@ -180,70 +199,63 @@ export interface Recognition {
 
 export const RECOGNITIONS: Recognition[] = [
   {
-    icon: Award,
-    title: "Moções de Aplausos",
-    description:
-      "Reconhecimento da Câmara Municipal pelo trabalho social desenvolvido junto à comunidade.",
-  },
-  {
-    icon: Medal,
-    title: "Medalha Benta Pereira",
-    description:
-      "Honraria concedida a cidadãos e instituições que se destacam por serviços prestados à sociedade.",
-  },
-  {
     icon: Building2,
-    title: "Clínica Regional de Hemodiálise Amigos do Rim",
+    title: "Clínica Regional de Hemodiálise",
     description:
-      "Conquista de uma clínica de hemodiálise que atende pacientes da região com excelência.",
+      "Criação da Clínica 'Amigos do Rim – Francisco Paes Filho – Nefro Campos', em anexo ao Hospital Geral de Guarus (HGG).",
+    year: "2024",
   },
   {
     icon: Trophy,
-    title: "Utilidade Pública",
+    title: "Utilidade Pública Municipal",
     description:
-      "Reconhecimento oficial como entidade de utilidade pública municipal e estadual.",
-  },
-];
-
-export const ART_CULTURE_ITEMS = [
-  {
-    icon: Music,
-    title: "Dança",
-    description: "Aulas e apresentações de dança como forma de expressão e terapia.",
+      "Declaração de Utilidade Pública através da Lei nº 8.751, de 19 de maio de 2017.",
+    year: "2017",
   },
   {
-    icon: Palette,
-    title: "Pintura",
-    description: "Oficinas de pintura e artes visuais para desenvolvimento criativo.",
+    icon: Award,
+    title: "Moções de Aplausos",
+    description:
+      "Múltiplas homenagens da Câmara Municipal de Campos dos Goytacazes pelo trabalho social.",
   },
   {
-    icon: Theater,
-    title: "Teatro",
-    description: "Apresentações e oficinas teatrais que promovem cultura e integração.",
+    icon: Medal,
+    title: "Prioridade na Vacinação COVID-19",
+    description:
+      "Conquista histórica: inclusão dos pacientes renais no grupo prioritário de vacinação durante a pandemia.",
+    year: "2021",
   },
 ];
 
 export const MISSION_VISION_VALUES = {
   mission:
-    "Promover qualidade de vida e dignidade aos pacientes renais crônicos e seus familiares através de apoio multidisciplinar, educação em saúde e mobilização social.",
+    "Promover qualidade de vida, dignidade e inclusão social para pacientes renais crônicos e seus familiares, oferecendo atendimento humanizado e suporte multidisciplinar.",
   vision:
-    "Ser referência no apoio a pacientes renais, contribuindo para uma sociedade mais consciente e solidária em relação às doenças renais.",
+    "Ser referência regional no cuidado integral ao paciente renal, fortalecendo ações de prevenção, tratamento, apoio social e mobilização comunitária.",
   values: [
-    { icon: Heart, label: "Humanidade" },
-    { icon: Users, label: "Solidariedade" },
-    { icon: Star, label: "Compromisso" },
-    { icon: Scale, label: "Ética" },
+    { icon: Handshake, label: "Solidariedade" },
+    { icon: ShieldCheck, label: "Ética" },
+    { icon: Users, label: "Inclusão" },
+    { icon: Heart, label: "Respeito à Vida" },
+    { icon: Sparkles, label: "Compromisso Social" },
   ],
 };
 
-export const CONTACT_INFO = {
-  address: "Rua Exemplo, 123 - Centro, Campos dos Goytacazes - RJ",
-  phone: "(22) 9999-9999",
-  email: "contato@amigasdorim.org.br",
-  socialMedia: {
-    facebook: "https://facebook.com/amigasdorim",
-    instagram: "https://instagram.com/amigasdorim",
-    youtube: "https://youtube.com/@amigasdorim",
-  },
+export const IMPACT_NUMBERS = {
+  yearsOfOperation: 15,
+  totalRegistered: 1039,
+  activePatients: 250,
+  trianonEvents: 11,
+  tropicalNights: 4,
 };
 
+export const CONTACT_INFO = {
+  address: "Rua Marechal Deodoro, 122, sala 01 - Centro, Campos dos Goytacazes - RJ",
+  phone: "(22) 99929-7714",
+  email: "presidenciaamigosdorim@gmail.com",
+  socialMedia: {
+    facebook: "https://facebook.com/amigosdorim",
+    instagram: "https://instagram.com/amigosdorim",
+    youtube: "https://youtube.com/@amigosdorim",
+  },
+};

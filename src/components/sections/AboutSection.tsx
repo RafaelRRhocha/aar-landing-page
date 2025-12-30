@@ -1,17 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Users, Star, Scale } from "lucide-react";
+import { Target, Eye, Heart } from "lucide-react";
 import { Container } from "../ui/Container";
 import { SectionTitle } from "../ui/SectionTitle";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../ui/AnimatedSection";
-
-const VALUES = [
-  { icon: Heart, label: "Humanidade" },
-  { icon: Users, label: "Solidariedade" },
-  { icon: Star, label: "Compromisso" },
-  { icon: Scale, label: "Ética" },
-];
+import { MISSION_VISION_VALUES } from "@/lib/constants";
 
 export function AboutSection() {
   return (
@@ -20,7 +14,7 @@ export function AboutSection() {
         <AnimatedSection>
           <SectionTitle
             title="Quem Somos"
-            subtitle="Uma história de amor, dedicação e cuidado com pacientes renais crônicos"
+            subtitle="Uma organização da sociedade civil dedicada ao cuidado de pacientes renais"
           />
         </AnimatedSection>
 
@@ -29,24 +23,21 @@ export function AboutSection() {
             <div className="space-y-4 sm:space-y-6">
               <h3 className="text-xl sm:text-2xl font-bold text-burgundy">Nossa História</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Fundada em <strong className="text-burgundy">2010</strong>, a
-                Associação Amigos do Rim nasceu do desejo de transformar a realidade
-                dos pacientes renais crônicos e suas famílias. Somos uma organização
-                sem fins lucrativos, composta inteiramente por{" "}
-                <strong className="text-burgundy">voluntários dedicados</strong> que
-                acreditam no poder da solidariedade.
+                A Associação Amigos do Rim, fundada em <strong className="text-burgundy">2010</strong>, 
+                é uma organização da sociedade civil, sem fins lucrativos, que atua de forma voluntária 
+                no apoio a pacientes renais crônicos e seus familiares em Campos dos Goytacazes e região.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                Ao longo de mais de uma década, construímos uma rede de apoio que vai
-                além do atendimento médico tradicional. Oferecemos suporte
-                multidisciplinar, educação em saúde, eventos culturais e beneficentes,
-                sempre com o objetivo de promover dignidade e qualidade de vida.
+                Ao longo de <strong className="text-burgundy">15 anos de atuação</strong>, a Associação 
+                consolidou-se como referência regional no cuidado ao paciente renal, contando com uma 
+                equipe multidisciplinar de profissionais voluntários nas áreas de psicologia, nutrição, 
+                fisioterapia, serviço social e direito.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                Nossa atuação é pautada pela transparência, ética e compromisso com a
-                comunidade. Trabalhamos em parceria com instituições públicas e
-                privadas para ampliar nosso impacto e garantir que nenhum paciente
-                renal se sinta sozinho em sua jornada.
+                Atualmente, a Associação mantém em seu cadastro <strong className="text-burgundy">1.039 
+                pacientes renais crônicos e familiares</strong>, dos quais 250 estão ativos nos últimos 
+                três anos. A Doença Renal Crônica (DRC) é considerada uma epidemia global pela 
+                Sociedade Brasileira de Nefrologia.
               </p>
             </div>
           </AnimatedSection>
@@ -61,9 +52,7 @@ export function AboutSection() {
                   <h4 className="text-base sm:text-lg font-bold text-foreground">Missão</h4>
                 </div>
                 <p className="text-foreground/70 leading-relaxed">
-                  Promover qualidade de vida e dignidade aos pacientes renais crônicos
-                  e seus familiares através de apoio multidisciplinar, educação em
-                  saúde e mobilização social.
+                  {MISSION_VISION_VALUES.mission}
                 </p>
               </div>
             </StaggerItem>
@@ -77,8 +66,7 @@ export function AboutSection() {
                   <h4 className="text-base sm:text-lg font-bold text-foreground">Visão</h4>
                 </div>
                 <p className="text-foreground/70 leading-relaxed">
-                  Ser referência no apoio a pacientes renais, contribuindo para uma
-                  sociedade mais consciente e solidária em relação às doenças renais.
+                  {MISSION_VISION_VALUES.vision}
                 </p>
               </div>
             </StaggerItem>
@@ -92,7 +80,7 @@ export function AboutSection() {
                   <h4 className="text-base sm:text-lg font-bold text-foreground">Valores</h4>
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {VALUES.map((value) => (
+                  {MISSION_VISION_VALUES.values.map((value) => (
                     <motion.div
                       key={value.label}
                       whileHover={{ scale: 1.02 }}
@@ -113,4 +101,3 @@ export function AboutSection() {
     </section>
   );
 }
-

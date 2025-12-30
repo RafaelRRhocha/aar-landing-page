@@ -1,7 +1,9 @@
 export { HeroSection } from "./HeroSection";
 export { AboutSection } from "./AboutSection";
 export { WorkSection } from "./WorkSection";
-export { ActivitiesSection } from "./ActivitiesSection";
+export { EventsSection } from "./EventsSection";
+export { GallerySection } from "./GallerySection";
 export { ArtAndCultureSection } from "./ArtAndCultureSection";
+export { ImpactSection } from "./ImpactSection";
 export { RecognitionSection } from "./RecognitionSection";
-
+export { CTASection } from "./CTASection";

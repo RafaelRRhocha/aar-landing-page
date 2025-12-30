@@ -1,15 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Music, Palette, Theater, Sparkles } from "lucide-react";
+import { Music, Palette, Theater } from "lucide-react";
 import { Container } from "../ui/Container";
 import { SectionTitle } from "../ui/SectionTitle";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../ui/AnimatedSection";
+import { ImageCarousel } from "../ui/ImageCarousel";
 
 const CULTURE_ITEMS = [
   {
     icon: Music,
-    title: "Dança",
+    title: "Dança e Música",
     description:
       "Aulas e apresentações de dança como forma de expressão, terapia e integração social.",
   },
@@ -17,19 +18,28 @@ const CULTURE_ITEMS = [
     icon: Palette,
     title: "Pintura e Artes Visuais",
     description:
-      "Oficinas de pintura e artesanato para desenvolvimento criativo e bem-estar emocional.",
+      "Oficinas de pintura em tela e telha para desenvolvimento criativo e bem-estar emocional.",
   },
   {
     icon: Theater,
-    title: "Teatro e Música",
+    title: "Teatro Trianon",
     description:
-      "Apresentações culturais que unem arte, sensibilidade e solidariedade.",
+      "11 eventos promovidos no Teatro Trianon com cantores locais, unindo arte e solidariedade.",
   },
+];
+
+const CULTURE_IMAGES = [
+  "/assets/aulapinturaemtelaepinturaemtelha/PHOTO-2025-12-09-19-53-35.jpg",
+  "/assets/aulapinturaemtelaepinturaemtelha/PHOTO-2025-12-09-19-53-35_1.jpg",
+  "/assets/aulaaromaterapia/PHOTO-2025-12-09-20-01-47.jpg",
+  "/assets/eventotrianon/IMG_8535.jpg",
+  "/assets/eventotrianon/IMG_8578.jpg",
+  "/assets/aulaparceriauenfcaminhosdebarro/IMG_8511.jpg",
 ];
 
 export function ArtAndCultureSection() {
   return (
-    <section id="arte-cultura" className="py-16 sm:py-20 desktop:py-32 bg-cream relative overflow-hidden">
+    <section id="arte-cultura" className="py-16 sm:py-20 desktop:py-32 bg-cream-dark relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -59,29 +69,12 @@ export function ArtAndCultureSection() {
         <div className="grid grid-cols-1 desktop:grid-cols-2 gap-8 sm:gap-12 items-center">
           <AnimatedSection delay={0.1}>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl sm:rounded-3xl bg-linear-to-br from-burgundy to-primary overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                    className="w-32 h-32 sm:w-48 sm:h-48 border-2 border-white/20 rounded-full flex items-center justify-center"
-                  >
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 border-2 border-white/30 rounded-full flex items-center justify-center">
-                      <Sparkles size={32} className="text-white/80 sm:w-12 sm:h-12" />
-                    </div>
-                  </motion.div>
-                </div>
-                <div className="absolute inset-0 bg-linear-to-t from-burgundy-dark/50 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                  <p className="text-white/90 text-base sm:text-lg font-medium">
-                    Espaço reservado para imagem
-                  </p>
-                  <p className="text-white/60 text-xs sm:text-sm">
-                    Adicione fotos das oficinas e eventos culturais
-                  </p>
-                </div>
-              </div>
-
+              <ImageCarousel
+                images={CULTURE_IMAGES}
+                aspectRatio="4-3"
+                autoplay={true}
+                showPagination={true}
+              />
               <div className="hidden sm:block absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-2xl -z-10" />
               <div className="hidden sm:block absolute -top-6 -left-6 w-24 h-24 bg-burgundy/10 rounded-2xl -z-10" />
             </div>
@@ -99,10 +92,11 @@ export function ArtAndCultureSection() {
 
             <AnimatedSection delay={0.3}>
               <p className="text-foreground/80 leading-relaxed">
-                Nossas atividades culturais vão além do entretenimento – são espaços
-                de expressão, integração e desenvolvimento pessoal, onde cada
-                participante pode descobrir novos talentos e fortalecer vínculos
-                afetivos.
+                A Associação realiza eventos culturais e beneficentes, como os{" "}
+                <strong className="text-burgundy">11 eventos promovidos no Teatro Trianon</strong>{" "}
+                com cantores locais e as <strong className="text-burgundy">4 tradicionais 
+                Noites Tropicais</strong>. Também promovemos oficinas de arte no Museu de 
+                Campos e exposições temáticas.
               </p>
             </AnimatedSection>
 
@@ -111,7 +105,7 @@ export function ArtAndCultureSection() {
                 <StaggerItem key={item.title}>
                   <motion.div
                     whileHover={{ x: 4 }}
-                    className="flex items-start gap-3 sm:gap-4 p-4 bg-white rounded-xl border border-cream-dark hover:shadow-md transition-all"
+                    className="flex items-start gap-3 sm:gap-4 p-4 bg-white rounded-xl border border-cream hover:shadow-md transition-all"
                   >
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                       <item.icon size={20} className="text-primary sm:w-6 sm:h-6" />
@@ -134,4 +128,3 @@ export function ArtAndCultureSection() {
     </section>
   );
 }
-

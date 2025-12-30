@@ -31,7 +31,8 @@ export function Footer() {
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Associação sem fins lucrativos dedicada ao apoio e cuidado de
-              pacientes renais crônicos e seus familiares desde 2010.
+              pacientes renais crônicos e seus familiares desde 2010 em Campos
+              dos Goytacazes.
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -102,7 +103,7 @@ export function Footer() {
                 <Mail size={18} className="text-white/60 shrink-0" />
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-white/70 hover:text-white transition-colors text-sm"
+                  className="text-white/70 hover:text-white transition-colors text-sm break-all"
                 >
                   {CONTACT_INFO.email}
                 </a>
@@ -117,11 +118,13 @@ export function Footer() {
               atendimento aos pacientes renais.
             </p>
             <a
-              href="#"
+              href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-colors"
             >
               <Heart size={16} />
-              Fazer Doação
+              Entre em Contato
             </a>
           </div>
         </div>
@@ -142,4 +145,3 @@ export function Footer() {
     </footer>
   );
 }
-

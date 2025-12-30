@@ -46,7 +46,8 @@ export function ArtAndCultureSection() {
   return (
     <section
       id="arte-cultura"
-      className="desktop:py-32 bg-cream-dark relative overflow-hidden py-16 sm:py-20"
+      className="desktop:py-32 bg-cream-dark relative py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <div className="absolute inset-0 opacity-5">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">

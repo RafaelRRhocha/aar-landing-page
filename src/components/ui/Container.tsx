@@ -13,7 +13,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <Component
-      className={`desktop:px-12 mx-auto w-full max-w-7xl overflow-x-hidden px-5 sm:px-8 ${className}`}
+      className={`desktop:px-12 mx-auto w-full max-w-7xl px-5 sm:px-8 ${className}`}
     >
       {children}
     </Component>

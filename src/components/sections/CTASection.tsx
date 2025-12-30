@@ -13,7 +13,8 @@ export function CTASection() {
   return (
     <section
       id="apoie"
-      className="desktop:py-32 bg-cream overflow-hidden py-16 sm:py-20"
+      className="desktop:py-32 bg-cream py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <Container>
         <div className="desktop:grid-cols-2 grid grid-cols-1 items-center gap-8 sm:gap-12">
@@ -40,18 +41,16 @@ export function CTASection() {
               </p>
 
               <div className="desktop:justify-start flex flex-col justify-center gap-3 sm:flex-row">
-                <Button variant="primary">
-                  <a
-                    className="text-white"
-                    href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Entre em Contato
-                  </a>
+                <Button
+                  variant="primary"
+                  href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, '')}`}
+                  target="_blank"
+                >
+                  Entre em Contato
                 </Button>
                 <Button
                   href={`https://wa.me/55${CONTACT_INFO.phone.replace(/\D/g, '')}`}
+                  target="_blank"
                   variant="outline"
                 >
                   Fale Conosco

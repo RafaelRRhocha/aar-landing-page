@@ -10,6 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   className?: string;
   href?: string;
+  target?: string;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -27,6 +28,7 @@ export function Button({
   variant = 'primary',
   className = '',
   href,
+  target,
   ...props
 }: ButtonProps) {
   const baseStyles =
@@ -36,6 +38,7 @@ export function Button({
     return (
       <motion.a
         href={href}
+        target={target}
         className={`${baseStyles} ${variantStyles[variant]} ${className}`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}

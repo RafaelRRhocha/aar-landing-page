@@ -17,7 +17,8 @@ export function AboutSection() {
   return (
     <section
       id="quem-somos"
-      className="desktop:py-32 bg-cream-dark overflow-hidden py-16 sm:py-20"
+      className="desktop:py-32 bg-cream-dark py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <Container>
         <AnimatedSection>

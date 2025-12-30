@@ -64,7 +64,8 @@ export function GallerySection() {
   return (
     <section
       id="galeria"
-      className="desktop:py-32 bg-cream overflow-hidden py-16 sm:py-20"
+      className="desktop:py-32 bg-cream py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <Container>
         <AnimatedSection>

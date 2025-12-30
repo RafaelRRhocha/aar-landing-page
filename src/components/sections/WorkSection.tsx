@@ -15,7 +15,8 @@ export function WorkSection() {
   return (
     <section
       id="nossa-atuacao"
-      className="desktop:py-32 bg-cream overflow-hidden py-16 sm:py-20"
+      className="desktop:py-32 bg-cream py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <Container>
         <AnimatedSection>

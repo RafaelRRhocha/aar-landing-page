@@ -6,7 +6,7 @@ import {
   Mail,
   MapPin,
   Phone,
-  Youtube,
+  // Youtube,
 } from 'lucide-react';
 
 import { CONTACT_INFO, NAV_LINKS } from '@/lib/constants';
@@ -60,7 +60,7 @@ export function Footer() {
               >
                 <Instagram size={18} />
               </a>
-              <a
+              {/* <a
                 href={CONTACT_INFO.socialMedia.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,7 +68,7 @@ export function Footer() {
                 aria-label="YouTube"
               >
                 <Youtube size={18} />
-              </a>
+              </a> */}
             </div>
           </div>
 

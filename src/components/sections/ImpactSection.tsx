@@ -66,7 +66,8 @@ export function ImpactSection() {
   return (
     <section
       id="impacto"
-      className="desktop:py-32 from-burgundy via-burgundy-dark to-primary overflow-hidden bg-linear-to-br py-16 sm:py-20"
+      className="desktop:py-32 from-burgundy via-burgundy-dark to-primary bg-linear-to-br py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <Container>
         <AnimatedSection>

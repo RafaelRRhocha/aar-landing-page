@@ -47,7 +47,8 @@ export function EventsSection() {
   return (
     <section
       id="eventos"
-      className="desktop:py-32 bg-cream-dark overflow-hidden py-16 sm:py-20"
+      className="desktop:py-32 bg-cream-dark py-16 sm:py-20"
+      style={{ overflow: 'clip' }}
     >
       <Container>
         <AnimatedSection>

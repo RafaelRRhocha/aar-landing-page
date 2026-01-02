@@ -3,7 +3,17 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Calendar, Heart, Menu, Star, Users, X } from 'lucide-react';
+import {
+  Award,
+  Calendar,
+  Camera,
+  Heart,
+  Mail,
+  Menu,
+  Palette,
+  Users,
+  X,
+} from 'lucide-react';
 
 import { CONTACT_INFO, NAV_LINKS } from '@/lib/constants';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
@@ -204,13 +214,28 @@ export function Header() {
                             />
                           )}
                           {index === 3 && (
-                            <Star
+                            <Camera
                               size={20}
                               className="text-primary transition-colors group-hover:text-white"
                             />
                           )}
-                          {index > 3 && (
-                            <div className="bg-primary h-2 w-2 rounded-full transition-colors group-hover:bg-white" />
+                          {index === 4 && (
+                            <Palette
+                              size={20}
+                              className="text-primary transition-colors group-hover:text-white"
+                            />
+                          )}
+                          {index === 5 && (
+                            <Award
+                              size={20}
+                              className="text-primary transition-colors group-hover:text-white"
+                            />
+                          )}
+                          {index === 6 && (
+                            <Mail
+                              size={20}
+                              className="text-primary transition-colors group-hover:text-white"
+                            />
                           )}
                         </div>
                         <span className="flex-1 text-base">{link.label}</span>

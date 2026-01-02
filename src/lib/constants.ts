@@ -148,6 +148,14 @@ export const EVENTS_DATA: Array<EventData> = [
       'Ações de conscientização sobre a importância da doação de órgãos e tecidos.',
     folder: 'campanhaconscientizaodianacionaldedoaodergos',
   },
+  {
+    id: 'doacao-sangue',
+    title: 'Campanha de Doação de Sangue',
+    description:
+      'Nossa primeira campanha de doação de sangue realizada no VIP Center em parceria com o Hemocentro de Campos, promovendo solidariedade e cuidado com a vida.',
+    folder: 'campanhadoacao',
+    featured: true,
+  },
 ];
 
 export interface GalleryCategory {
@@ -193,6 +201,12 @@ export const GALLERY_CATEGORIES: Array<GalleryCategory> = [
     title: 'Reuniões',
     folder: 'reunioes',
     description: 'Encontros de planejamento e organização da associação',
+  },
+  {
+    id: 'doacao-sangue',
+    title: 'Doação de Sangue',
+    folder: 'campanhadoacao',
+    description: 'Primeira campanha de doação de sangue no VIP Center em parceria com o Hemocentro',
   },
 ];
 

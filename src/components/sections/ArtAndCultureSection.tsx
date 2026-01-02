@@ -34,12 +34,12 @@ const CULTURE_ITEMS = [
 ];
 
 const CULTURE_IMAGES = [
-  '/assets/aulapinturaemtelaepinturaemtelha/PHOTO-2025-12-09-19-53-35.jpg',
-  '/assets/aulapinturaemtelaepinturaemtelha/PHOTO-2025-12-09-19-53-35_1.jpg',
-  '/assets/aulaaromaterapia/PHOTO-2025-12-09-20-01-47.jpg',
-  '/assets/eventotrianon/IMG_8535.jpg',
-  '/assets/eventotrianon/IMG_8578.jpg',
-  '/assets/aulaparceriauenfcaminhosdebarro/IMG_8511.jpg',
+  '/assets/aulapinturaemtelaepinturaemtelha/pintura-tela-telha-01.jpg',
+  '/assets/aulapinturaemtelaepinturaemtelha/pintura-tela-telha-02.jpg',
+  '/assets/aulaaromaterapia/aromaterapia-01.jpg',
+  '/assets/eventotrianon/trianon-01.jpg',
+  '/assets/eventotrianon/trianon-02.jpg',
+  '/assets/aulaparceriauenfcaminhosdebarro/parceria-uenf-01.jpg',
 ];
 
 export function ArtAndCultureSection() {

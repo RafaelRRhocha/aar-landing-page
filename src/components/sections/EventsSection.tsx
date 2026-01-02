@@ -10,34 +10,63 @@ import { SectionTitle } from '../ui/SectionTitle';
 
 const EVENT_IMAGES: Record<string, Array<string>> = {
   baile: [
-    '/assets/baile/IMG_8131.JPG',
-    '/assets/baile/IMG_8132.JPG',
-    '/assets/baile/IMG_8133.JPG',
+    '/assets/baile/baile-01.jpg',
+    '/assets/baile/baile-02.jpg',
+    '/assets/baile/baile-03.jpg',
+    '/assets/baile/baile-04.jpg',
+    '/assets/baile/baile-05.jpg',
+    '/assets/baile/baile-06.jpg',
+    '/assets/baile/baile-07.jpg',
+    '/assets/baile/baile-08.jpg',
+    '/assets/baile/baile-09.jpg',
   ],
   eventotrianon: [
-    '/assets/eventotrianon/IMG_8535.jpg',
-    '/assets/eventotrianon/IMG_8578.jpg',
-    '/assets/eventotrianon/IMG_8594.jpg',
+    '/assets/eventotrianon/trianon-01.jpg',
+    '/assets/eventotrianon/trianon-02.jpg',
+    '/assets/eventotrianon/trianon-03.jpg',
+    '/assets/eventotrianon/trianon-04.jpg',
   ],
   diamundialdorim2025: [
-    '/assets/diamundialdorim2025/IMG_8520.JPG',
-    '/assets/diamundialdorim2025/IMG_8521.JPG',
-    '/assets/diamundialdorim2025/IMG_8522.JPG',
+    '/assets/diamundialdorim2025/dia-rim-01.jpg',
+    '/assets/diamundialdorim2025/dia-rim-02.jpg',
+    '/assets/diamundialdorim2025/dia-rim-03.jpg',
+    '/assets/diamundialdorim2025/dia-rim-04.jpg',
+    '/assets/diamundialdorim2025/dia-rim-05.jpg',
+    '/assets/diamundialdorim2025/dia-rim-06.jpg',
+    '/assets/diamundialdorim2025/dia-rim-07.jpg',
   ],
   confraternizaofinaldeano: [
-    '/assets/confraternizaofinaldeano/089b20ae-0056-40d6-8d74-2070d6d5b182.JPG',
-    '/assets/confraternizaofinaldeano/0d7b69b1-2eff-4772-abc1-19a99f09194c.JPG',
-    '/assets/confraternizaofinaldeano/37f305f2-e5f1-472f-808d-7c1a2602ea28.JPG',
+    '/assets/confraternizaofinaldeano/confraternizacao-01.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-02.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-03.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-04.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-05.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-06.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-07.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-08.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-09.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-10.jpg',
+    '/assets/confraternizaofinaldeano/confraternizacao-11.jpg',
   ],
   doeorgaos: [
-    '/assets/doeorgaos/IMG_8541.JPG',
-    '/assets/doeorgaos/IMG_8542.JPG',
-    '/assets/doeorgaos/IMG_8543.JPG',
+    '/assets/doeorgaos/doacao-orgaos-01.jpg',
+    '/assets/doeorgaos/doacao-orgaos-02.jpg',
+    '/assets/doeorgaos/doacao-orgaos-03.jpg',
   ],
   campanhaconscientizaodianacionaldedoaodergos: [
-    '/assets/campanhaconscientizaodianacionaldedoaodergos/IMG_8533.JPG',
-    '/assets/campanhaconscientizaodianacionaldedoaodergos/IMG_8534.JPG',
-    '/assets/campanhaconscientizaodianacionaldedoaodergos/IMG_8535.JPG',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-01.jpg',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-02.jpg',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-03.jpg',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-04.jpg',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-05.jpg',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-06.jpg',
+    '/assets/campanhaconscientizaodianacionaldedoaodergos/campanha-conscientizacao-07.jpg',
+  ],
+  campanhadoacao: [
+    '/assets/campanhadoacao/campanhadoacao-01.jpg',
+    '/assets/campanhadoacao/campanhadoacao-02.jpg',
+    '/assets/campanhadoacao/campanhadoacao-03.jpg',
+    '/assets/campanhadoacao/campanhadoacao-04.jpg',
   ],
 };
 
@@ -67,7 +96,7 @@ export function EventsSection() {
                 description={event.description}
                 image={
                   EVENT_IMAGES[event.folder]?.[0] ||
-                  '/assets/baile/IMG_8131.JPG'
+                  '/assets/baile/baile-01.jpg'
                 }
               />
             ))}

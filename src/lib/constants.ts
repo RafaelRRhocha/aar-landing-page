@@ -206,7 +206,8 @@ export const GALLERY_CATEGORIES: Array<GalleryCategory> = [
     id: 'doacao-sangue',
     title: 'Doação de Sangue',
     folder: 'campanhadoacao',
-    description: 'Primeira campanha de doação de sangue no VIP Center em parceria com o Hemocentro',
+    description:
+      'Primeira campanha de doação de sangue no VIP Center em parceria com o Hemocentro',
   },
 ];
 
@@ -270,8 +271,7 @@ export const IMPACT_NUMBERS = {
 };
 
 export const CONTACT_INFO = {
-  address:
-    'Rua Marechal Deodoro, 122, sala 01 - Centro, Campos dos Goytacazes - RJ',
+  address: 'Rua Siqueira Campos, 104 - Centro, Campos dos Goytacazes - RJ',
   phone: '(22) 99929-7714',
   email: 'presidenciaamigosdorim@gmail.com',
   socialMedia: {

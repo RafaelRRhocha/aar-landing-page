@@ -24,6 +24,7 @@ export const NAV_LINKS = [
   { href: '#galeria', label: 'Galeria' },
   { href: '#arte-cultura', label: 'Arte e Cultura' },
   { href: '#impacto', label: 'Impacto' },
+  { href: '#parcerias', label: 'Parcerias' },
   { href: '#contato', label: 'Contato' },
 ];
 
@@ -270,10 +271,48 @@ export const IMPACT_NUMBERS = {
   tropicalNights: 4,
 };
 
+export interface Partner {
+  name: string;
+  description: string;
+  image: string;
+}
+
+export const PARTNERS: Array<Partner> = [
+  {
+    name: 'Fiducia Contabilidade',
+    description:
+      'Parceria com escritório de contabilidade oferecendo suporte administrativo e fiscal à associação.',
+    image: '/assets/parcerias/parceria_finducia.jpeg',
+  },
+  {
+    name: 'Sindipetro NF',
+    description:
+      'Parceria com o Sindicato dos Petroleiros do Norte Fluminense, ampliando o apoio social aos pacientes.',
+    image: '/assets/parcerias/parceria_sindipetro.jpeg',
+  },
+  {
+    name: 'PAA – Aquisição de Alimentos',
+    description:
+      'Programa federal em parceria com a Prefeitura de Campos que garante alimentos às famílias atendidas.',
+    image: '/assets/parcerias/parceria_paa.jpg',
+  },
+  {
+    name: 'Ponto de Cultura – MinC',
+    description:
+      'Certificação pelo Ministério da Cultura como Ponto de Cultura, reconhecendo nossa atuação cultural na comunidade.',
+    image: '/assets/parcerias/cadastro_nacional.jpeg',
+  },
+];
+
 export const CONTACT_INFO = {
   address: 'Rua Siqueira Campos, 104 - Centro, Campos dos Goytacazes - RJ',
   phone: '(22) 99929-7714',
   email: 'presidenciaamigosdorim@gmail.com',
+  cnes: '8065748',
+  cnpj: '12.666.157/0001-30',
+  legalName: 'Associação Amigos do Rim',
+  legalNature: 'Entidade Sem Fins Lucrativos',
+  businessHours: 'Segunda a Sexta, 08:30 às 17:00',
   socialMedia: {
     facebook: 'https://facebook.com/amigosdorim',
     instagram: 'https://instagram.com/amigosdorim',

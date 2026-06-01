@@ -5,5 +5,6 @@ export { EventsSection } from './EventsSection';
 export { GallerySection } from './GallerySection';
 export { HeroSection } from './HeroSection';
 export { ImpactSection } from './ImpactSection';
+export { PartnershipsSection } from './PartnershipsSection';
 export { RecognitionSection } from './RecognitionSection';
 export { WorkSection } from './WorkSection';

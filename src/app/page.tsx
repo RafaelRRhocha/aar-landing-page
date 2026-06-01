@@ -7,6 +7,7 @@ import { EventsSection } from '@/components/sections/EventsSection';
 import { GallerySection } from '@/components/sections/GallerySection';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { ImpactSection } from '@/components/sections/ImpactSection';
+import { PartnershipsSection } from '@/components/sections/PartnershipsSection';
 import { RecognitionSection } from '@/components/sections/RecognitionSection';
 import { WorkSection } from '@/components/sections/WorkSection';
 
@@ -23,6 +24,7 @@ export default function Home() {
         <ArtAndCultureSection />
         <ImpactSection />
         <RecognitionSection />
+        <PartnershipsSection />
         <CTASection />
       </main>
       <Footer />

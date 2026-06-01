@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Mail, MapPin, Phone } from 'lucide-react';
+import { Clock, Heart, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 
 import { CONTACT_INFO } from '@/lib/constants';
 
@@ -118,6 +118,41 @@ export function CTASection() {
                     </div>
                   </div>
                 </motion.div>
+
+                <div className="border-cream-dark mt-2 border-t pt-4">
+                  <div className="text-foreground/50 mb-3 flex items-center gap-2 text-xs font-semibold tracking-wider uppercase">
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                    Identificação Institucional
+                  </div>
+                  <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                    <div>
+                      <dt className="text-foreground/50 text-xs">CNES</dt>
+                      <dd className="text-foreground font-medium">
+                        {CONTACT_INFO.cnes}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-foreground/50 text-xs">CNPJ</dt>
+                      <dd className="text-foreground font-medium">
+                        {CONTACT_INFO.cnpj}
+                      </dd>
+                    </div>
+                    <div className="col-span-2">
+                      <dt className="text-foreground/50 text-xs">
+                        Natureza Jurídica
+                      </dt>
+                      <dd className="text-foreground font-medium">
+                        {CONTACT_INFO.legalNature}
+                      </dd>
+                    </div>
+                    <div className="col-span-2 flex items-center gap-1.5">
+                      <Clock className="text-foreground/40 h-3.5 w-3.5 shrink-0" />
+                      <span className="text-foreground/70">
+                        {CONTACT_INFO.businessHours}
+                      </span>
+                    </div>
+                  </dl>
+                </div>
               </div>
             </div>
           </AnimatedSection>

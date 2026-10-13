@@ -8,3 +8,4 @@ export { ImpactSection } from './ImpactSection';
 export { PartnershipsSection } from './PartnershipsSection';
 export { RecognitionSection } from './RecognitionSection';
 export { WorkSection } from './WorkSection';
+export { YouTubeSection } from './YouTubeSection';

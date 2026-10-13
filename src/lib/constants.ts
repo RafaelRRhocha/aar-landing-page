@@ -316,6 +316,8 @@ export const CONTACT_INFO = {
   socialMedia: {
     facebook: 'https://facebook.com/amigosdorim',
     instagram: 'https://instagram.com/amigosdorim',
-    youtube: 'https://youtube.com/@amigosdorim',
+    youtube: 'https://www.youtube.com/@associacaoamigosdorim',
   },
 };
+
+export const YOUTUBE_CHANNEL_ID = 'UC00a-zdLNf37rq2Jt3xfeJQ';

@@ -8,3 +8,4 @@ export { Container } from './Container';
 export { EventCarousel } from './EventCarousel';
 export { ImageCarousel } from './ImageCarousel';
 export { SectionTitle } from './SectionTitle';
+export { YouTubePlayer } from './YouTubePlayer';

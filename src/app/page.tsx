@@ -10,6 +10,7 @@ import { ImpactSection } from '@/components/sections/ImpactSection';
 import { PartnershipsSection } from '@/components/sections/PartnershipsSection';
 import { RecognitionSection } from '@/components/sections/RecognitionSection';
 import { WorkSection } from '@/components/sections/WorkSection';
+import { YouTubeSection } from '@/components/sections/YouTubeSection';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <ImpactSection />
         <RecognitionSection />
         <PartnershipsSection />
+        <YouTubeSection />
         <CTASection />
       </main>
       <Footer />
